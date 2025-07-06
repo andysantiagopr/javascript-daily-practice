@@ -1,0 +1,24 @@
+/*
+  🧠 Codewars Daily Challenge Log
+
+1. 
+  🔗 Challenge: https://www.codewars.com/kata/515e271a311df0350d00000f
+  📅 Date Completed: July 6, 2025
+  🧩 Difficulty: 8 Kyu
+  👤 Profile: https://www.codewars.com/users/andysantiagopr
+*/
+
+function squareSum(numbers) {
+  // Initialize the total to 0
+  let total = 0;
+
+  // Use .reduce() to square each number and accumulate the total sum
+  return total = numbers.reduce(function(accumulator, currentValue) {
+    return accumulator + (currentValue ** 2);  
+  }, 0);
+}
+
+// ✅ Example Usage
+console.log(squareSum([1, 2, 2])); // ➞ 9
+console.log(squareSum([0, 3, 4, 5])); // ➞ 50
+console.log(squareSum([])); // ➞ 0
