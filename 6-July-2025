@@ -22,3 +22,26 @@ function squareSum(numbers) {
 console.log(squareSum([1, 2, 2])); // ➞ 9
 console.log(squareSum([0, 3, 4, 5])); // ➞ 50
 console.log(squareSum([])); // ➞ 0
+
+
+2. 
+  🔗 Challenge: https://www.codewars.com/kata/54c27a33fb7da0db0100040e/javascript
+  📅 Date Completed: July 6, 2025
+  🧩 Difficulty: 7 Kyu
+  👤 Profile: https://www.codewars.com/users/andysantiagopr
+*/
+
+var isSquare = function(n) {
+  // Check if the square root of n is an integer and n is non-negative
+  if (Number.isInteger(Math.sqrt(n)) && n >= 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// ✅ Example Usage
+console.log(isSquare(25));  // ➞ true
+console.log(isSquare(26));  // ➞ false
+console.log(isSquare(0));   // ➞ true
+console.log(isSquare(-1));  // ➞ false
