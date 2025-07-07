@@ -1,0 +1,22 @@
+/*
+  🧠 Codewars Daily Challenge Log
+
+  🔗 Challenge: https://www.codewars.com/kata/5502c9e7b3216ec63c0001aa/javascript
+  📅 Date Completed: July 7, 2025
+  🧩 Difficulty: 7 Kyu
+  👤 Profile: https://www.codewars.com/users/andysantiagopr
+*/
+
+function openOrSenior(data){
+  return data.map(person => {
+    if (person[0] >= 55 && person[1] > 7) {
+      return 'Senior';
+    } else {
+      return 'Open';
+    }
+  });
+}
+
+// ✅ Example Usage
+console.log(openOrSenior([[18, 20], [45, 2], [61, 12], [78, 9]])); 
+// ➞ ["Open", "Open", "Senior", "Senior"]
