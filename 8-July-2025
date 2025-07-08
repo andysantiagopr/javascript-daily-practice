@@ -1,0 +1,22 @@
+/*
+  🧠 Codewars Daily Challenge Log
+
+1.
+  🔗 Challenge: https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/javascript
+  📅 Date Completed: July 8, 2025
+  🧩 Difficulty: 8 Kyu
+  👤 Profile: https://www.codewars.com/users/andysantiagopr
+*/
+
+function paperwork(n, m) {
+  return (n < 0 || m < 0) ? 0 : n * m; 
+  // Returns 0 if either n or m is negative; otherwise, returns the product of n and m using a ternary operator.
+}
+
+// ✅ Example Usage
+console.log(paperwork(5, 5));   // ➞ 25
+console.log(paperwork(5, -5));  // ➞ 0
+console.log(paperwork(-5, -5)); // ➞ 0
+
+
+2. 
