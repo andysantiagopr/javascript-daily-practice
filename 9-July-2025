@@ -1,0 +1,24 @@
+/*
+📘 Codewars Daily Challenge Log  
+🔗 Challenge: [Isograms](https://www.codewars.com/kata/54ba84be607a92aa900000f1/javascript)  
+📅 Date Completed: 2025-07-09  
+🏷️ Difficulty: 7 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr  
+*/
+
+function isIsogram(str) {
+  let letters = str.toLowerCase().split(""); 
+  // 🔡 Convert the string to lowercase and split it into individual characters.
+
+  for (let i = 0; i < letters.length; i++) { 
+    // 🔁 Loop through each character in the array.
+
+    if (letters.indexOf(letters[i]) !== i) { 
+      // ❗ If the first occurrence of the current letter isn't at this index, it's a duplicate.
+      return false;
+    }
+  }
+
+  return true; 
+  // ✅ No duplicates found — it's an isogram!
+}
