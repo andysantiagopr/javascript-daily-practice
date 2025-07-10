@@ -1,0 +1,29 @@
+/*
+🧠 Codewars Daily Challenge Log  
+📅 Date: 2025-07-10  
+🎯 Challenge: [Binary Addition](https://www.codewars.com/kata/551f37452ff852b7bd000139/javascript)  
+💪 Difficulty: 7 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+🔍 Solution:
+*/
+function addBinary(a, b) {
+  let sum = a + b;
+  return sum.toString(2); //toString(radix) method converts a number to a string in the specified base, also known as radix. Radix base 2 is for binary.
+}
+
+/*
+🧠 Codewars Daily Challenge Log  
+📅 Date: 2025-07-10  
+🎯 Challenge: [Remove String Spaces](https://www.codewars.com/kata/57eae20f5500ad98e50002c5/javascript)  
+💪 Difficulty: 8 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+🔍 Solution:
+This function removes all space characters from the input string using the `.replace()` method with a regular expression that targets all spaces globally.
+
+✅ Code:
+*/
+function noSpace(x) {
+  return x.replace(/ /g, ''); // Remove all spaces from the string
+}
