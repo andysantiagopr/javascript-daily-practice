@@ -1,0 +1,30 @@
+/*
+🧠 Codewars Daily Challenge Log  
+📅 Date: 2025-07-11 
+🎯 Challenge: [Total amount of points](https://www.codewars.com/kata/5bb904724c47249b10000131/javascript)  
+💪 Difficulty: 8 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+🔍 Solution:
+This function calculates the total points earned from a list of football match results. Each match is given in the format "x:y", where `x` is our team's score and `y` is the opponent's. It uses `.split(':')` to extract each score, parses them into numbers, and applies the win/tie/loss rules.
+
+✅ Code:
+*/
+function points(games) { 
+  let count = 0;
+
+  for (let i = 0; i < games.length; i++) {
+    let [x, y] = games[i].split(':'); // Destructure scores from "x:y"
+    x = parseInt(x); // Convert to integers
+    y = parseInt(y);
+
+    if (x > y) {
+      count += 3; // Win
+    } else if (x === y) {
+      count += 1; // Tie
+    }
+    // Loss = 0 points, nothing to add
+  }
+
+  return count;
+}
