@@ -1,0 +1,17 @@
+/*
+🧠 Codewars Daily Challenge Log  
+📅 Date: 2025-07-12  
+🎯 Challenge: [Beginner Series #2 Clock](https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/train/javascript)  
+💪 Difficulty: 8 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+🔍 Solution:
+This function takes in hours, minutes, and seconds, and converts the total time to **milliseconds**. It multiplies each unit by its equivalent in milliseconds and sums the result.
+
+✅ Code:
+*/
+function past(h, m, s) {
+  return (h * 3600000) + (m * 60000) + (s * 1000);
+}
+
+
