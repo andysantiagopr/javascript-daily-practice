@@ -1,0 +1,29 @@
+/*
+🧠 Codewars Daily Challenge Log  
+📅 Date: 2025-07-13  
+🎯 Challenge: [Mumbling](https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/javascript)  
+💪 Difficulty: 7 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+🔍 Solution:
+This function transforms a string by repeating each character based on its index, 
+with the first letter in uppercase and the rest in lowercase. It then joins all parts using a dash `-`.
+
+✅ Code:
+*/
+function accum(s) {
+  let splitted = s.split(''); // Split string into array of characters
+  let result = [];
+
+  for (let i = 0; i < splitted.length; i++) {
+    let part = splitted[i].toUpperCase() + splitted[i].toLowerCase().repeat(i);  
+    result.push(part);
+  }
+
+  return result.join('-'); // Join transformed parts with dashes
+}
+
+// 📌 Examples:
+console.log(accum("abcd"));      // Output: "A-Bb-Ccc-Dddd"
+console.log(accum("RqaEzty"));   // Output: "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+console.log(accum("cwAt"));      // Output: "C-Ww-Aaa-Tttt"
