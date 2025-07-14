@@ -1,0 +1,37 @@
+/*
+Codewars Challenge Log  
+Challenge: https://www.codewars.com/kata/52fba66badcd10859f00097e/javascript  
+Date Completed: July 14  
+Difficulty: 7 kyu  
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Challenge Summary:
+Remove all vowels from a given string and return the new string without them.
+
+Solution:
+*/
+function disemvowel(str) {
+  let split = str.split('');
+  let result = [];
+  let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  for (let i = 0; i < split.length; i++) {
+    if (vowels.includes(split[i])) {
+      continue;
+    } else {
+      result.push(split[i]);
+    }
+  }
+  return result.join('');
+}
+
+/*
+Examples:
+disemvowel("This website is for losers LOL!")
+→ "Ths wbst s fr lsrs LL!"
+
+disemvowel("No offense but,\nYour writing is among the worst I've ever read")
+→ "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd"
+
+disemvowel("What are you, a communist?")
+→ "Wht r y,  cmmnst?"
+*/
