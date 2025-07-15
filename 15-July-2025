@@ -1,0 +1,50 @@
+/*
+Codewars Challenge Log  
+Challenge: https://www.codewars.com/kata/53da3dbb4a5168369a0000fe/javascript  
+Date Completed: July 15  
+Difficulty: 8 kyu  
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Challenge Summary:
+Write a function that takes an integer and returns "Even" if the number is even, or "Odd" otherwise.
+
+Solution:
+*/
+function evenOrOdd(number) {
+  return number % 2 === 0 ? "Even" : "Odd"; 
+  // Using the ternary operator: if the condition is true (even), return "Even", else "Odd"
+}
+
+/*
+Examples:
+evenOrOdd(2) → "Even"
+evenOrOdd(7) → "Odd"
+evenOrOdd(0) → "Even"
+evenOrOdd(-3) → "Odd"
+*/
+
+/*
+Codewars Daily Challenge Log  
+Challenge: https://www.codewars.com/kata/55b42574ff091733d900002f/javascript  
+Date Completed: July 15  
+Difficulty: 7 kyu  
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Challenge Summary:
+Write a function that filters a list of strings and returns a list with only your friends' names in it.
+A name is considered a friend if it contains exactly 4 letters.
+
+Solution:
+*/
+function friend(friends) {
+  return friends.filter(friend => friend.length === 4); 
+  // The .filter() method loops through the array and returns a new array 
+  // containing only elements that satisfy the given condition.
+}
+
+/*
+Examples:
+friend(["Ryan", "Kieran", "Jason", "Yous"]) → ["Ryan", "Yous"]
+friend(["Peter", "Stephen", "Joe"]) → []
+friend(["John", "Paul", "George", "Ringo"]) → ["John", "Paul"]
+*/
