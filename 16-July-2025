@@ -1,0 +1,22 @@
+/*
+🧠 Codewars Daily Challenge Log  
+📅 Date: 2025-07-16  
+🎯 Challenge: [Shortest Word](https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/javascript)  
+💪 Difficulty: 7 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+🔍 Solution:
+This function splits a string into words, then iterates through each one to determine the length of the shortest word. `lowest` is initialized with the length of the first word as a reasonable starting point. Comparing each word's length to `lowest` ensures we update only when a shorter word is found.
+
+✅ Code:
+*/
+function findShort(s) {
+  let splitted = s.split(' '); 
+  let lowest = splitted[0].length; // Establishes a decent starting point. If initialized with 0, it would always be false since no word has length 0.
+  for (let i = 0; i < splitted.length; i++) {
+    if (splitted[i].length <= lowest) { // No need for lowest.length — it's already a number. Using lowest.length would return undefined.
+      lowest = splitted[i].length;
+    } 
+  }
+  return lowest;
+}
