@@ -1,0 +1,25 @@
+/*
+Codewars Daily Challenge Log
+----------------------------
+Challenge: [Stop gninnipS My sdroW!](https://www.codewars.com/kata/5264d2b162488dc400000001/javascript)
+Date Completed: July 17
+Difficulty: 6 kyu
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Solution:
+function spinWords(string){
+  return string
+    .split(" ") // Convert the sentence into an array of words
+    .map(word => 
+      word.length >= 5 
+        ? word.split("").reverse().join("") // Reverse if word is 5+ characters
+        : word
+    )
+    .join(" "); // Join the array back into a string
+}
+
+Examples:
+spinWords("Hey fellow warriors") ➞ "Hey wollef sroirraw"
+spinWords("This is a test") ➞ "This is a test"
+spinWords("This is another test") ➞ "This is rehtona test"
+*/
