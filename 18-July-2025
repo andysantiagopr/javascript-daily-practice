@@ -1,0 +1,35 @@
+/*
+🔗 Codewars Challenge: https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/javascript  
+📅 Date Completed: 18 July  
+🧠 Difficulty: 6 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+📝 Description:
+Count the number of duplicate characters in a string. A character is considered a duplicate if it appears more than once (case-insensitive). The function should return the number of distinct characters that occur more than once.
+
+💡 Approach:
+1. Normalize the input by converting it to lowercase and splitting it into characters.
+2. Use `reduce()` to build a frequency map that tracks how many times each character appears.
+3. Use `Object.values()` to extract counts, `filter()` to isolate duplicates, and `length` to return the total number of duplicates.
+
+📦 Code:
+*/
+
+function duplicateCount(text) {
+  const frequencyMap = text
+    .toLowerCase()
+    .split("")
+    .reduce((acc, char) => {
+      acc[char] = (acc[char] || 0) + 1;
+      return acc;
+    }, {});
+
+  return Object.values(frequencyMap).filter(count => count > 1).length;
+}
+
+/*
+🧪 Examples:
+duplicateCount("aabBcde") ➞ 2   // 'a' and 'b'
+duplicateCount("aA11")    ➞ 2   // 'a' and '1'
+duplicateCount("abcd")    ➞ 0   // no duplicates
+*/
