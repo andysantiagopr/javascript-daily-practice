@@ -1,0 +1,31 @@
+/*
+📅 Codewars Daily Challenge Log  
+🔗 Challenge: https://www.codewars.com/kata/55f8a9c06c018a0d6e000132/javascript  
+📆 Date Completed: July 19  
+🏷️ Difficulty: 7 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr  
+
+🧠 Summary:  
+The function `validatePIN` checks if the input string is a valid PIN by ensuring it contains **only 4 or 6 numeric digits** — no letters, symbols, or spaces allowed. It uses a regular expression to enforce this rule.
+
+📌 Code:
+function validatePIN(pin) {
+  let regex = /^(\d{4}|\d{6})$/; // This regular expression matches exactly 4 or 6 digits only.
+  return regex.test(pin);        // The .test() method checks if the input matches the regex pattern and returns true or false.
+}
+
+📎 Examples:
+validatePIN("1234") ➞ true  
+validatePIN("123456") ➞ true  
+validatePIN("123") ➞ false  
+validatePIN("abcd") ➞ false  
+validatePIN("12345 ") ➞ false  
+
+✅ Regex Breakdown:
+- `^` and `$` anchor the pattern to the beginning and end of the string
+- `\d{4}` matches **exactly four digits**
+- `\d{6}` matches **exactly six digits**
+- `|` is the **OR** operator, allowing either length
+- The whole pattern ensures **no other characters** are allowed
+
+*/
