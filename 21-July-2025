@@ -14,9 +14,6 @@ User: https://www.codewars.com/users/andysantiagopr
      - Appending the rest with `word.slice(1)`
   3. `join(" ")` stitches the array back into a full sentence with spaces.
 
-✅ Example:
-"The quick brown fox".toJadenCase(); // => "The Quick Brown Fox"
-*/
 Object.defineProperty(
   String.prototype,
   'toJadenCase',
@@ -28,3 +25,7 @@ Object.defineProperty(
    }
   }
 );
+
+✅ Example:
+"The quick brown fox".toJadenCase(); // => "The Quick Brown Fox"
+*/
