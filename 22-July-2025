@@ -1,0 +1,28 @@
+/*
+Codewars Challenge: https://www.codewars.com/kata/546f922b54af40e1e90001da/javascript
+Date Completed: July 22
+Difficulty: 6 kyu
+User Profile: https://www.codewars.com/users/andysantiagopr
+*/
+
+function alphabetPosition(text) {
+
+  let alphabet = {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7,
+  h: 8, i: 9, j: 10, k: 11, l: 12, m: 13, n: 14,
+  o: 15, p: 16, q: 17, r: 18, s: 19, t: 20, u: 21,
+  v: 22, w: 23, x: 24, y: 25, z: 26}; // Object used to map each letter to its corresponding number
+
+  let splitted = text.toLowerCase().split(''); // Converts text to lowercase and splits it into individual characters
+
+  const result = splitted
+    .filter(char => alphabet[char]) // Keeps only characters that exist as keys in the alphabet object (filters out numbers, spaces, punctuation)
+    .map(char => alphabet[char]);   // Transforms each valid character to its corresponding number from the alphabet object
+
+  return result.join(' '); // Joins the resulting numbers into a space-separated string
+}
+
+/*
+Examples:
+alphabetPosition("abc!")       → "1 2 3"
+alphabetPosition("Hello world") → "8 5 12 12 15 23 15 18 12 4"
+*/
