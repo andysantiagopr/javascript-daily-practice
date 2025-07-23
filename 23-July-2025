@@ -1,0 +1,24 @@
+/*
+🧠 Codewars Daily Challenge Log
+📅 Date Completed: July 23, 2025
+🔗 Challenge: https://www.codewars.com/kata/5526fc09a1bbd946250002dc/solutions/javascript?filter=me&sort=best_practice&invalids=false
+🏷️ Difficulty: 6 kyu
+👤 Profile: https://www.codewars.com/users/andysantiagopr
+
+📝 Solution:
+function findOutlier(integers){
+  let even = integers.filter(number => number % 2 === 0);
+  let odd = integers.filter(number => number % 2 !== 0); // The syntax for using modulus operator for odd numbers on negatives. If you use % 2 === 1, it will only react to positive numbers and will return undefined on negative values.
+  return even.length === 1 ? even[0] : odd[0];
+}
+
+📌 Explanation:
+- The function identifies whether the array contains mostly even or mostly odd numbers.
+- It separates the array into two filtered arrays: `even` and `odd`.
+- It returns the only number that differs in parity (e.g., the one odd in a sea of evens, or vice versa).
+
+📊 Examples:
+findOutlier([2, 4, 0, 100, 4, 11, 2602]) ➞ 11  
+findOutlier([160, 3, 1719, 19, 11, 13, -21]) ➞ 160  
+findOutlier([-2, -4, -6, -8, 5]) ➞ 5  
+*/
