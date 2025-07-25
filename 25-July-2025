@@ -1,0 +1,28 @@
+// 🧠 Codewars Daily Challenge Log  
+// 🔗 Challenge: https://www.codewars.com/kata/583f4a7e522561aa5f000200/javascript  
+// 📅 Date Completed: July 25, 2025  
+// 🎯 Difficulty: 7 kyu  
+// 👤 Profile: https://www.codewars.com/users/andysantiagopr  
+
+// 📌 Task: Determine if a relation R over a set S is reflexive.  
+// A relation is reflexive if for every element `x` in S, the pair [x, x] exists in R.  
+
+function isReflexive(s, r) {
+  for (let i = 0; i < s.length; i++) {                 // Loop through each element in S (the set of points)
+    let found = false;                                 // Start assuming the reflexive pair [s[i], s[i]] is not in R
+    for (let j = 0; j < r.length; j++) {               // Loop through each pair in R (the relation)
+      if (r[j][0] === s[i] && r[j][1] === s[i]) {      // Check if the current pair is [s[i], s[i]]
+        found = true;                                  // If found, mark as true
+        break;                                         // Exit inner loop early since we found the reflexive pair
+      }
+    }
+    if (!found) {                                      // If no reflexive pair was found for s[i]
+      return false;                                    // The relation is not reflexive, so return false
+    }
+  }
+  return true;                                         // If all points had reflexive pairs, return true
+}
+
+// 🧪 Examples:
+console.log(isReflexive([1, 2, 3], [[1,1],[2,2],[3,3]])); // true
+console.log(isReflexive([1, 2], [[1,2],[2,2]]));          // false
