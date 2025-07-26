@@ -1,0 +1,52 @@
+/*
+Codewars Challenge Log  
+Date Completed: July 26  
+Challenge: Binary Sequence Challenge  
+Difficulty: 4 kyu  
+Profile: https://www.codewars.com/users/andysantiagopr  
+Challenge Link: https://www.codewars.com/kata/6731f24e1030b1d039d3b619/javascript  
+
+Description:
+Given a generator that produces a binary sequence (1s and 0s), the goal is to build a final array using a specific transformation rule.
+For each zero in the array, you must replace it using the index of the next 1 from a newly initialized generator, adding 1 to that index. This process repeats until all zeros are replaced.
+
+Note: I did not solve this challenge on my own and do not take credit for the solution. This code was written for educational purposes and thoroughly commented to better understand how it works. */
+
+function f(fn, ns) {
+    function* cfn() {                                             // Infinite generator wrapper
+        for (let it = fn();;) {                                   // Start the generator
+            const v = it.next();                                  // Get the next value
+            yield v.value;                                        // Yield the value
+            if (v.done) it = fn();                                // If done, restart it
+        }
+    }
+
+    function* ones() {                                            // Generator that yields indices of 1s
+        for (let i = 0, it = cfn();; ++i) {                       // Loop through generator output
+            if (it.next().value === 1) yield i;                   // If value is 1, yield its index
+        }
+    }
+
+    const a = new Array(Math.max(...ns) + 1);                     // Final output array (correct size)
+    const onesIt = ones();                                        // Generator for 1-indices
+    let empty = Array.from({ length: a.length }, (_, i) => i);    // Indices we still need to fill
+
+    while (empty.length) {                                        // Keep looping until array is full
+        const index = onesIt.next().value + 1;                    // Value to assign to next 1-positions
+        const it = cfn();                                         // Fresh binary generator each time
+
+        empty = empty.filter(e =>                                 
+            it.next().value === 0 || (a[e] = index, false)        // Fill if 1, keep if 0
+        );
+    }
+
+    return ns.map(i => a[i]);                                     // Return results for requested indices
+}
+
+
+/*
+Examples:
+Input generator: [1, 0, 1, 0, 1, 0, ...]  
+Input indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+Output: [1, 3, 1, 5, 1, 3, 1, 7, 1, 3]  
+*/
