@@ -1,0 +1,23 @@
+/*
+Codewars Challenge Log  
+Date Completed: July 27  
+Challenge: String Repeat  
+Difficulty: 8 kyu  
+Profile: https://www.codewars.com/users/andysantiagopr  
+Challenge Link: https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/javascript  
+
+Description:
+Write a function that accepts a non-negative integer `n` and a string `s` as parameters, and returns a new string consisting of `s` repeated `n` times.
+
+Note: Although the problem guarantees `n` is a non-negative integer, this solution includes a validation step using regex to demonstrate input checking. */
+
+
+function repeatStr (n, s) {
+  let regex = /^\d*\.?\d+$/; // Regex to check for positive number input
+  return regex.test(n) ? s.repeat(n) : "The number input is not valid."; // Only repeat if input is valid
+}
+
+/*
+Examples:
+6, "I"     → "IIIIII"  
+5, "Hello" → "HelloHelloHelloHelloHello"  */
