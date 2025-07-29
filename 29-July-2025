@@ -1,0 +1,29 @@
+/*
+Codewars Daily Challenge Log  
+Date Completed: July 29, 2025  
+Challenge: [Will there be enough Ruby developers?](https://www.codewars.com/kata/5827acd5f524dd029d0005a4/javascript)  
+Difficulty: 7 kyu  
+User Profile: https://www.codewars.com/users/andysantiagopr  
+
+Description:
+Check if at least one developer in the list has "Ruby" as their language.
+
+Code:
+function isRubyComing(list) {
+  return list.some(dev => dev.language === 'Ruby'); // The .some() method checks if at least one element in the array satisfies the condition.
+                                                    // It stops iterating as soon as it finds a match and returns true.
+}
+
+Examples:
+isRubyComing([
+  { firstName: 'Alice', language: 'Python' },
+  { firstName: 'Bob', language: 'Ruby' }
+]); 
+// Output: true
+
+isRubyComing([
+  { firstName: 'Alice', language: 'Python' },
+  { firstName: 'Bob', language: 'JavaScript' }
+]);
+// Output: false
+*/
