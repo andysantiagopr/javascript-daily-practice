@@ -1,0 +1,35 @@
+/*
+Codewars Challenge: https://www.codewars.com/kata/54da539698b8a2ad76000228/javascript
+Date Completed: July 30, 2025
+Difficulty: 6 kyu
+User: https://www.codewars.com/users/andysantiagopr
+
+Description:
+You are given an array of one-letter directions (n, s, e, w) representing steps taken in a city grid. Each step takes 1 minute. 
+Return true if the walk is exactly 10 minutes long and returns to the starting point; otherwise, return false.
+
+Solution:
+*/
+
+function isValidWalk(walk) {
+  if (walk.length !== 10) return false;  // Immediately return false if the walk does not take exactly 10 minutes (i.e., 10 steps)
+
+  let x = 0; // Tracks horizontal movement: east (+1), west (−1)
+  let y = 0; // Tracks vertical movement: north (+1), south (−1)
+
+  for (let dir of walk) { // Iterate through each step in the walk and adjust x/y accordingly
+    if (dir === 'n') y++;
+    if (dir === 's') y--;
+    if (dir === 'e') x++;
+    if (dir === 'w') x--;
+  }
+  
+  return x === 0 && y === 0; // Return true only if the walk returns to the starting point (0,0)
+}
+
+/*
+Examples:
+isValidWalk(['n','s','n','s','n','s','n','s','n','s']) // true
+isValidWalk(['n','n','n','s','s','s','e','w','e','w']) // true
+isValidWalk(['n','n','n'])                             // false
+*/
