@@ -1,0 +1,30 @@
+/*
+Codewars Challenge: Sort the odd
+Date: July 31, 2025
+Profile: https://www.codewars.com/users/andysantiagopr
+Challenge Link: https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
+*/
+
+function sortArray(array) {
+
+  let oddArray = [];
+
+  // Identify and separate odd numbers in a separate array
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 !== 0) {
+      oddArray.push(array[i]);
+    }
+  }
+
+  // Sort odd numbers in ascending order
+  let sortedArray = oddArray.sort((a, b) => a - b);
+
+  // Replace odd numbers with sorted ones, keep even numbers unchanged
+  let sortedIndex = 0;
+  return array.map(number => {
+    if (number % 2 !== 0) {
+      return sortedArray[sortedIndex++];
+    }
+    return number;
+  });
+}
