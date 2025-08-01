@@ -1,0 +1,30 @@
+/*
+Codewars Challenge: https://www.codewars.com/kata/526571aae218b8ee490006f4/javascript
+Date Completed: August 1, 2025
+Difficulty: 6 kyu
+User: https://www.codewars.com/users/andysantiagopr
+
+Description:
+Write a function that takes an integer as input and returns the number of bits that are equal to one in the binary representation of that number.
+
+Example:
+countBits(1234); // returns 5, because binary is "10011010010"
+
+Solution:
+*/
+
+function countBits(n) {
+  return n
+    .toString(2) // Convert number to binary string
+    .split('') // Split into array of characters
+    .reduce((count, bit) => count + (bit === '1' ? 1 : 0), 0); // Add 1 if bit is "1"
+}
+
+/*
+Examples:
+countBits(0);     // 0 => "0"
+countBits(4);     // 1 => "100"
+countBits(7);     // 3 => "111"
+countBits(9);     // 2 => "1001"
+countBits(10);    // 2 => "1010"
+*/
