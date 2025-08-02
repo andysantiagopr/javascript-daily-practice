@@ -1,0 +1,30 @@
+/*
+Codewars Challenge: https://www.codewars.com/kata/517abf86da9663f1d2000003/javascript
+Date Completed: August 2, 2025
+Difficulty: 6 kyu
+User: https://www.codewars.com/users/andysantiagopr
+
+Description:
+Convert a string with delimiters (`-` or `_`) into camel case. The first word should remain unchanged in case, while all subsequent words should be capitalized.
+
+Solution:
+*/
+
+function toCamelCase(str) {
+ 
+  let splitted = str.split(/[-_]/);  // Split the string into words using "-" or "_" as delimiters
+
+  for (let i = 1; i < splitted.length; i++) {  // Start from index 1 to leave the first word's case unchanged
+    
+    splitted[i] = splitted[i][0].toUpperCase() + splitted[i].slice(1); // Capitalize the first character and append the rest of the word
+  }
+
+  return splitted.join('');  // Join all parts back into a single camelCase string
+}
+
+/*
+Examples:
+toCamelCase("the-stealth-warrior")    // returns "theStealthWarrior"
+toCamelCase("The_Stealth_Warrior")    // returns "TheStealthWarrior"
+toCamelCase("a-b-c")                  // returns "aBC"
+*/
