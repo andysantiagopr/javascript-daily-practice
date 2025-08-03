@@ -1,0 +1,29 @@
+/*
+Codewars Daily Challenge Log  
+Challenge: https://www.codewars.com/kata/546e2562b03326a88e000020/javascript  
+Date Completed: August 3, 2025  
+Difficulty: 7 kyu  
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Description:
+Given a number, square every digit and concatenate the result. Return the final number.
+
+Examples:
+Input: 9119 ➞ Output: 811181
+Input: 765 ➞ Output: 493625
+
+*/
+
+function squareDigits(num) {
+
+  let splitted = num.toString().split(""); 
+  // Convert the number to a string, then split it into an array of individual digits.
+
+  for (let i = 0; i < splitted.length; i++) {
+    splitted[i] = Number(splitted[i]) ** 2; 
+    // Convert each digit back to a number, square it, and store it back in the array.
+  }
+  
+  return Number(splitted.join("")); 
+  // Join the squared digits into a single string, then convert it back to a number.
+}
