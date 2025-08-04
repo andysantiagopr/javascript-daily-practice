@@ -1,0 +1,20 @@
+/*
+  Codewars Daily Challenge Log  
+  Challenge: https://www.codewars.com/kata/55685cd7ad70877c23000102/train/javascript  
+  Date Completed: August 4, 2025  
+  Difficulty: 8 kyu  
+  User Profile: https://www.codewars.com/users/andysantiagopr  
+  
+  --- Challenge: Return Negative ---
+  Task: Return the negative of the given number. If already negative or 0, return as is.
+  Examples:
+    makeNegative(5) ➝ -5  
+    makeNegative(-3) ➝ -3  
+    makeNegative(0) ➝ 0  
+*/
+
+function makeNegative(num) {
+  return num <= 0 ? num : -num;
+}
+
+
