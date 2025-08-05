@@ -21,3 +21,27 @@ filter_list([1, 2, 'a', 'b']) ➞ [1, 2]
 filter_list([1, 'a', 'b', 0, 15]) ➞ [1, 0, 15]  
 filter_list([1, 2, 'aasf', '1', '123', 123]) ➞ [1, 2, 123]
 */
+
+/*
+Challenge: Two to One – return a sorted string of distinct letters from two input strings  
+Link: https://www.codewars.com/kata/5656b6906de340bd1b0000ac/javascript  
+User: https://www.codewars.com/users/andysantiagopr  
+Difficulty: 7 kyu  
+
+Description:  
+Combine two strings, remove duplicates, sort the result alphabetically, and return it as a single string.
+
+Code:
+*/
+function longest(s1, s2) {
+  let arr = (s1 + s2).split('');                     // Combine both strings and split into characters
+  let result = [...new Set(arr)].sort().join('');   // Remove duplicates with Set, sort alphabetically, then join into a string
+  return result;
+}
+
+/*
+Examples:
+longest("aretheyhere", "yestheyarehere") ➞ "aehrsty"  
+longest("loopingisfunbutdangerous", "lessdangerousthancoding") ➞ "abcdefghilnoprstu"  
+longest("inmanylanguages", "theresapairoffunctions") ➞ "acefghilmnoprstuy"
+*/
