@@ -1,0 +1,23 @@
+/*
+Codewars Challenge Log  
+Date Completed: August 5, 2025  
+Challenge: Filter out non-numbers from a list  
+Link: https://github.com/andysantiagopr/codewars-daily-challenges/tree/main  
+User: https://www.codewars.com/users/andysantiagopr  
+Difficulty: 7 kyu  
+
+Description:  
+Write a function that filters out non-integer values from a list.  
+
+Code:
+*/
+function filter_list(l) {
+  return l.filter(x => typeof x === 'number');
+}
+
+/*
+Examples:
+filter_list([1, 2, 'a', 'b']) ➞ [1, 2]  
+filter_list([1, 'a', 'b', 0, 15]) ➞ [1, 0, 15]  
+filter_list([1, 2, 'aasf', '1', '123', 123]) ➞ [1, 2, 123]
+*/
