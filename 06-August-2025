@@ -1,0 +1,18 @@
+/*
+Codewars Daily Challenge Log  
+Date: August 6, 2025  
+Challenge: https://www.codewars.com/kata/54ff3102c1bad923760001f3/javascript  
+Profile: https://www.codewars.com/users/andysantiagopr  
+Difficulty: 7 kyu  
+
+Description:  
+Return the number of vowels in a given string. Only 'a', 'e', 'i', 'o', 'u' are considered vowels (no 'y').  
+*/
+
+function getCount(str) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];           // Define an array of vowel characters
+  let arr = str.split('');                         // Convert the input string into an array of individual characters
+  return arr.reduce((a, b) => vowels.includes(b)   // If the character is a vowel, increment the count
+    ? a + 1
+    : a, 0);                                       // Otherwise, keep the count unchanged
+}
