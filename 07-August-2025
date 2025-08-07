@@ -1,0 +1,33 @@
+/*
+📅 Codewars Daily Challenge Log  
+🔗 Challenge: https://www.codewars.com/kata/566fc12495810954b1000030/javascript  
+📆 Date Completed: 7 August 2025  
+🏷️ Difficulty: 7 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr  
+
+📝 Summary:
+Completed the "Count the Digit" challenge where the goal was to count how many times a given digit appears in the squares of all numbers from 0 to n.
+
+
+📂 Code:
+function nbDig(n, d) {
+  let count = 0;
+  
+  for (let i = 0; i <= n; i++) {          // Loop through every number from 0 to n
+    let square = i * i;                   // Calculate the square of the current number
+    let squareStr = square.toString();    // Convert the result to a string so you can inspect each digit
+    let targetDigit = d.toString();       // Convert the target digit to a string for comparison
+  
+    for (let char of squareStr) {         // Check each character in the squared string
+      if (char === targetDigit) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+🧪 Examples:
+nbDig(10, 1) ➞ 4  
+nbDig(25, 1) ➞ 11
+*/
