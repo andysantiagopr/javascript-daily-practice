@@ -1,0 +1,23 @@
+/*
+Codewars Challenge: https://www.codewars.com/kata/582cb0224e56e068d800003c/javascript
+Date Completed: August 8, 2025
+Difficulty: 8 kyu
+User: https://www.codewars.com/users/andysantiagopr
+
+Challenge:
+Nathan loves cycling. Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+You get given the time in hours and you need to return the number of litres Nathan will drink, rounded down to the smallest value.
+
+Solution:
+- Multiply the time (hours) by 0.5 to get total litres consumed.
+- Use Math.floor() to round down to the nearest whole number.
+*/
+
+function litres(time) {
+  return Math.floor(time * 0.5);
+}
+
+// Examples:
+// litres(2) => 1
+// litres(1.4) => 0
+// litres(12.3) => 6
