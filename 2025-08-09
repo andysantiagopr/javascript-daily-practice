@@ -1,0 +1,39 @@
+/*
+Codewars Daily Challenge Log
+Date Completed: August 9, 2025
+Challenge: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/javascript
+Difficulty: 6 kyu
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Description:
+Split the given string into pairs of two characters.
+If the string contains an odd number of characters, pad the final pair with an underscore (_).
+
+Code:
+function solution(str) {
+  let splitted = str.split(''); // Convert string to array of characters
+  
+  if (splitted.length % 2 !== 0) { 
+    // If array length is odd, add underscore so every pair has two elements
+    splitted.push('_');
+  }
+
+  return splitted
+    .map((char, i, arr) => { 
+      // .map() parameters:
+      // char → current element
+      // i    → index of current element
+      // arr  → entire array being iterated
+      if (i % 2 === 0) { 
+        // Only process even indexes to form pairs
+        return char + arr[i + 1]; // Combine current element with the next one
+      }
+    })
+    .filter(Boolean); // Remove undefined entries from odd indexes
+}
+
+Examples:
+solution("abcdef"); // ["ab", "cd", "ef"]
+solution("abc");    // ["ab", "c_"]
+solution("");       // []
+*/
