@@ -1,0 +1,21 @@
+/*
+Codewars Daily Challenge Log
+Date Completed: August 10, 2025
+Profile: https://www.codewars.com/users/andysantiagopr
+Challenge: https://www.codewars.com/kata/534ea96ebb17181947000ada/train/javascript
+Difficulty: Not specified
+
+Description:
+Given a chocolate bar of size n x m, determine the minimum number of breaks needed to split it into individual 1x1 squares.
+
+Code:
+*/
+function breakChocolate(n, m) {
+  let dimensions = (n * m) - 1;
+  return dimensions <= 1 ? 0 : dimensions;
+}
+
+// Examples:
+console.log(breakChocolate(3, 3)); // 8
+console.log(breakChocolate(1, 1)); // 0
+console.log(breakChocolate(0, 5)); // 0
