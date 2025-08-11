@@ -1,0 +1,37 @@
+/*
+Codewars Daily Challenge Log
+Date Completed: August 11, 2025
+Profile: https://www.codewars.com/users/andysantiagopr
+Challenge: https://www.codewars.com/kata/55f2b110f61eb01779000053/javascript
+Difficulty: 7 kyu
+
+Code:
+
+function getSum(a, b) { 
+  // Sort a and b in ascending order, then reassign them using array destructuring
+  // Ensures that 'a' will always be the smaller number and 'b' the larger number.
+  [a, b] = [a, b].sort((x, y) => x - y); 
+
+  // If both numbers are the same, just return one of them (no summation needed).
+  if (a === b) return a; 
+
+  // Initialize a variable to store the running total.
+  let sum = 0; 
+
+  // Loop from 'a' (smallest) up to and including 'b' (largest),
+  // adding each number in the range to 'sum'.
+  for (let i = a; i <= b; i++) { 
+    sum += i; 
+  }
+
+  // Return the final sum of all integers between a and b (inclusive).
+  return sum;
+}
+
+Examples:
+getSum(1, 0)  // Output: 1
+getSum(1, 2)  // Output: 3
+getSum(0, 1)  // Output: 1
+getSum(1, 1)  // Output: 1
+getSum(-1, 2) // Output: 2
+*/
