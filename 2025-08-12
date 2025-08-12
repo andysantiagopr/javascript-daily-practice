@@ -1,0 +1,28 @@
+/*
+Codewars Daily Challenge Log
+Date Completed: August 12, 2025
+Challenge: https://www.codewars.com/kata/56582133c932d8239900002e/javascript
+Difficulty: 7 kyu
+Profile: https://www.codewars.com/users/andysantiagopr
+
+function mostFrequentItemCount(collection) {
+  // Return 0 immediately if the input array is empty
+  if (collection.length === 0) return 0;
+
+  const freq = collection.reduce((acc, num) => {
+    // If acc[num] is undefined (first time seeing num), acc[num] || 0 becomes 0
+    // Then add 1 to update the count
+    acc[num] = (acc[num] || 0) + 1;
+    return acc;
+  }, {}); // Start with an empty object as the accumulator
+
+  // Extract all counts into an array, spread them as arguments into Math.max,
+  // and return the highest count — the number of occurrences of the most frequent item
+  return Math.max(...Object.values(freq));
+}
+
+Examples:
+mostFrequentItemCount([3, -1, -1])           // returns 2 (-1 appears twice)
+mostFrequentItemCount([3, -1, -1, -1, 2])    // returns 3 (-1 appears three times)
+mostFrequentItemCount([])                    // returns 0 (empty array)
+*/
