@@ -1,0 +1,38 @@
+/*
+Codewars Daily Challenge Log
+Profile: https://www.codewars.com/users/andysantiagopr
+Challenge: https://www.codewars.com/kata/580777ee2e14accd9f000165/javascript
+Date Completed: August 13, 2025
+Difficulty: 7 kyu
+
+// Description:
+// Generate a "Skiponacci" sequence where every other number (even index) is replaced with "skip".
+// Fibonacci numbers are calculated based on the previous two terms, starting with 1, 1.
+
+function skiponacci(n) {
+  // Store initial Fibonacci numbers
+  const fib = [1, 1];
+  // Output array
+  const arr = [];
+
+  for (let i = 0; i < n; i++) {
+    if (i < 2) {
+      // First two elements use pre-defined Fibonacci values
+      arr.push(i % 2 === 0 ? fib[i] : "skip");
+    } else {
+      // Calculate next Fibonacci number
+      const nextFib = fib[fib.length - 1] + fib[fib.length - 2];
+      fib.push(nextFib);
+      // Add either Fibonacci number or "skip" based on index
+      arr.push(i % 2 === 0 ? nextFib : "skip");
+    }
+  }
+  // Join array into a single string
+  return arr.join(' ');
+}
+
+Examples:
+skiponacci(1) ➞ "1"
+skiponacci(5) ➞ "1 skip 2 skip 5"
+skiponacci(7) ➞ "1 skip 2 skip 5 skip 13"
+*/
