@@ -1,0 +1,38 @@
+/*
+Codewars Daily Challenge Log
+Date Completed: 15 August, 2025
+Challenge Link: https://www.codewars.com/kata/56cca888a9d0f25985000036/javascript
+Profile: https://www.codewars.com/users/andysantiagopr
+
+Function: candiesToBuy(kids)
+Purpose: Determine the smallest number of candies that can be divided evenly among any possible number of kids from 1 to `kids` without leftovers.
+Approach: Calculate the Least Common Multiple (LCM) of all integers from 1 to `kids` using the Greatest Common Divisor (GCD) as a helper.
+
+Example:
+kids = 3 → LCM(1, 2, 3) = 6 candies
+kids = 5 → LCM(1, 2, 3, 4, 5) = 60 candies
+*/
+
+function candiesToBuy(kids) {
+  let candies = 1n; // Start with 1 as BigInt for safe large integer math
+
+  // Euclidean algorithm for Greatest Common Divisor (GCD)
+  function gcd(a, b) {
+    while (b !== 0n) {
+      [a, b] = [b, a % b];
+    }
+    return a;
+  }
+
+  // LCM formula using GCD
+  function lcm(a, b) {
+    return (a / gcd(a, b)) * b;
+  }
+
+  // Loop from 2 up to `kids`, updating the LCM each time
+  for (let i = 2n; i <= BigInt(kids); i++) {
+    candies = lcm(candies, i);
+  }
+
+  return Number(candies); // Return as a number for Codewars test compatibility
+}
