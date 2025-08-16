@@ -1,0 +1,70 @@
+
+/*
+Codewars Daily Challenge Log
+Date Completed: 16 August, 2025
+
+Challenge 1: "Who likes it?" 
+Link: https://www.codewars.com/kata/5266876b8f4bf2da9b000362/javascript
+Profile: https://www.codewars.com/users/andysantiagopr
+
+Function: likes(names)
+Purpose: Return a social media-style string based on how many people like something.
+*/
+
+function likes(names) {
+  if (names.length === 0) {
+    // No names in the array → default response
+    return "no one likes this";
+  } 
+  else if (names.length === 1) {
+    // One person → singular verb "likes"
+    return `${names[0]} likes this`;
+  } 
+  else if (names.length === 2) {
+    // Two people → "X and Y like this"
+    return `${names[0]} and ${names[1]} like this`;
+  } 
+  else if (names.length === 3) {
+    // Three people → "X, Y and Z like this"
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+  } 
+  else {
+    // More than 3 → show first two names, then "X others"
+    const startIndex = 2; // used to calculate the "others"
+    return `${names[0]}, ${names[1]} and ${names.length - startIndex} others like this`;
+  }
+}
+
+/*
+Examples:
+likes([]) → "no one likes this"
+likes(["Peter"]) → "Peter likes this"
+likes(["Jacob", "Alex"]) → "Jacob and Alex like this"
+likes(["Max", "John", "Mark"]) → "Max, John and Mark like this"
+likes(["Alex", "Jacob", "Mark", "Max"]) → "Alex, Jacob and 2 others like this"
+*/
+
+
+
+/*
+Challenge 2: "Reversed Strings"
+Link: https://www.codewars.com/kata/5168bb5dfe9a00b126000018
+Profile: https://www.codewars.com/users/andysantiagopr
+
+Function: solution(str)
+Purpose: Reverse a given string and return it.
+*/
+
+function solution(str) {
+  // split('') → convert string into an array of characters
+  // reverse() → reverse the array order
+  // join('') → join back into a string with no spaces
+  return str.split('').reverse().join('');
+}
+
+/*
+Example:
+solution("world") → "dlrow"
+solution("hello") → "olleh"
+*/
+```
