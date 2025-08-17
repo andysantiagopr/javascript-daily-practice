@@ -1,0 +1,33 @@
+/*
+🔗 Challenge: https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/javascript  
+📅 Date Completed: August 17, 2025  
+💪 Difficulty: 6 kyu  
+👤 Profile: https://www.codewars.com/users/andysantiagopr  
+
+--------------------------------------
+function duplicateEncode(word) {
+  // Step 1: Build a frequency map of all characters (case-insensitive)
+  const freq = word
+    .toLowerCase()
+    .split('')
+    .reduce((acc, char) => { 
+      // acc starts as an empty object {}
+      // char is the current character being processed
+      acc[char] = (acc[char] || 0) + 1; // If key doesn’t exist, default to 0 and add 1
+      return acc; // Return acc so it carries over to the next iteration
+    }, {});
+
+  // Step 2: Transform characters based on frequency
+  return word
+    .toLowerCase()
+    .split('')
+    .map(char => (freq[char] > 1 ? ')' : '(')) // freq[char] retrieves the count of the current character
+    .join('');
+}
+--------------------------------------
+
+📝 Examples:
+duplicateEncode("recede")   ➝ "()()()"
+duplicateEncode("Success")  ➝ ")())())"
+duplicateEncode("(( @")     ➝ "))(("
+*/
