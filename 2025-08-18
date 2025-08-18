@@ -1,0 +1,22 @@
+/* 
+Codewars Daily Challenge Log
+Date: 18 August 2025
+Challenge: https://www.codewars.com/kata/578553c3a1b8d5c40300037c/javascript
+Profile: https://www.codewars.com/users/andysantiagopr
+
+Solution:
+*/
+const binaryArrayToNumber = arr => parseInt(arr.join(''), 2); 
+
+// parseInt() converts a string representation of a number into an integer.
+// The second argument (2) tells parseInt() to interpret the string as binary.
+// .join('') combines the array elements into a single string without separators.
+// If .join() is used without parameters, the default separator is a comma (",").
+// We need a continuous string (e.g., "1011") instead of "1,0,1,1" for correct binary conversion.
+
+/* 
+Examples:
+binaryArrayToNumber([1,0,1,1]) // 11
+binaryArrayToNumber([1,1,1,1]) // 15
+binaryArrayToNumber([0,1,0,1]) // 5
+*/
