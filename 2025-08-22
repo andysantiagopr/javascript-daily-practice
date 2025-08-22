@@ -1,0 +1,25 @@
+// Codewars Daily Challenge Log
+// Date: August 22, 2025
+// Challenge: Build Tower (https://www.codewars.com/kata/576757b1df89ecf5bd00073b/javascript)
+// Difficulty: 6 kyu
+// Profile: https://www.codewars.com/users/andysantiagopr
+
+function towerBuilder(nFloors) {
+
+  nFloors = Math.floor(Number(nFloors)); // convert to number and round down to an integer
+  if (!Number.isFinite(nFloors) || nFloors <= 0) return []; // guard clause: reject NaN, Infinity, or <= 0
+
+  let char = "*";
+  let tower = [];
+
+  for (let i = 0; i < nFloors; i++) {
+    const starsCount = 2 * i + 1;       // formula gives odd numbers (1, 3, 5...) for stars
+    const spacesCount = nFloors - i - 1; // spaces shrink as i increases, keeping stars centered
+    const row = " ".repeat(spacesCount) + char.repeat(starsCount) + " ".repeat(spacesCount); 
+    // build each row by concatenating left spaces, stars, and right spaces
+    // no "\n" needed because rows are stored separately in an array
+    tower.push(row); // push the row into the array
+  }
+
+  return tower; // final result: array of strings, each representing one level of the tower
+}
