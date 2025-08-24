@@ -1,0 +1,27 @@
+// Codewars Daily Challenge Log
+// Date: August 24, 2025
+// Challenge: Remove Parentheses (https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/solutions/javascript?filter=me&sort=best_practice&invalids=false)
+// Difficulty: 6 kyu
+// Profile: https://www.codewars.com/users/andysantiagopr
+
+function removeParentheses(s){
+  var prevStr;
+  do {
+    prevStr = s; // saves the current state of the string at the start of each iteration
+    s = s.replace(/\([^\)\(]*\)/, ""); // strips out the innermost parentheses and its content
+  } while (prevStr != s); // continues looping until no further replacements are made (strings match)
+  return prevStr;
+}
+
+// Examples:
+console.log(removeParentheses("example(unwanted thing)example")); 
+// "exampleexample"
+
+console.log(removeParentheses("example (something)")); 
+// "example "
+
+console.log(removeParentheses("hello example (words(more words)here) something")); 
+// "hello example  something"
+
+console.log(removeParentheses("(first group) (second group) (third group)")); 
+// "  "
