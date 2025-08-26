@@ -1,0 +1,36 @@
+/*
+==================== Codewars Daily Challenge Log ====================
+
+Challenge: Reverse the Middle or Swap Halves
+Link: https://www.codewars.com/kata/5516ab668915478845000780/javascript
+Date Completed: 25 August 2025
+Difficulty: 7
+User Profile: https://www.codewars.com/users/andysantiagopr
+
+Code:
+function reverseByCenter(s) {
+  // Use floor so odd lengths point to the true middle index (0-based).
+  const middleIndex = Math.floor(s.length / 2);
+
+  if (s.length % 2 === 0) { 
+    // Even length: split in two and swap halves.
+    const firstHalf = s.substring(0, middleIndex);   // substring(start, end) → [0, middleIndex)
+    const secondHalf = s.substring(middleIndex);     // no end → goes until the end of the string
+    return secondHalf + firstHalf;
+  } else { 
+    // Odd length: keep the middle char in place, swap the halves around it.
+    const firstHalf = s.substring(0, middleIndex);   // left part before the middle
+    const middleChar = s.charAt(middleIndex);        // single char at the middle index
+    const secondHalf = s.substring(middleIndex + 1); // right part after the middle
+    return secondHalf + middleChar + firstHalf;
+  }
+}
+
+Examples:
+reverseByCenter("abcd")   // "cdab"
+reverseByCenter("abcde")  // "decab"
+reverseByCenter("x")      // "x"
+reverseByCenter("hello")  // "lohel"
+
+=====================================================================
+*/
