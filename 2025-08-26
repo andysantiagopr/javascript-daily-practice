@@ -1,0 +1,42 @@
+/*
+Codewars Daily Challenge Log
+Date: 26 August 2025
+Challenge: Upturn Numeral Triangle
+Difficulty: 7 kyu
+Link: https://www.codewars.com/kata/564f3d49a06556d27c000077/solutions/javascript?filter=me&sort=best_practice&invalids=false
+Profile: https://www.codewars.com/users/andysantiagopr
+
+--- Code ---
+function pattern(n) {
+  const lines = []; // Collects each row of the triangle as a string.
+  
+  for (let i = 1; i <= n; i++) { // Start from 1 so the first row is not skipped.
+    const pad = ' '.repeat(i); // Left indentation: increases by one space each row.       
+    const digit = String(i % 10); // Row label. %10 wraps after 9 (10→0, 11→1, ...). String() makes intent explicit.
+    const reps = n - i + 1; // Number of digits in this row: decreases by one each iteration.
+    const body = Array.from({ length: reps }, () => digit).join(' '); 
+    // Build the row: create `reps` copies of `digit` and join with spaces (no trailing space).
+    
+    lines.push(pad + body); // Combine padding + row digits.
+  }
+
+  return lines.join('\n'); // Final multi-line string.
+}
+
+--- Examples ---
+n = 5
+ 1 1 1 1 1
+  2 2 2 2
+   3 3 3
+    4 4
+     5
+
+n = 7
+ 1 1 1 1 1 1 1
+  2 2 2 2 2 2
+   3 3 3 3 3
+    4 4 4 4
+     5 5 5
+      6 6
+       7
+*/
