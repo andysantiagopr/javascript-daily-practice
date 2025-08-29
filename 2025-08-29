@@ -1,0 +1,54 @@
+/*
+========================
+Codewars Daily Challenge Log
+========================
+Date Completed: 2025-08-29
+Kata: Upturn Numeral Triangle
+Link: https://www.codewars.com/kata/564f3d49a06556d27c000077/solutions/javascript
+Difficulty: 7 kyu
+Profile: https://www.codewars.com/users/andysantiagopr
+
+Solution (JavaScript):
+--------------------------------------------------
+function pattern(n){
+
+  let triangle = [];
+
+  for (let i = 1; i <= n; i++) {
+    let numbers = n - i + 1; 
+    // math for the inverted pyramid: first row is biggest (n), then decreases (n-1, n-2...).
+    // numbers controls how many times the digit will repeat.
+    // The following ch variable is a digit just for visuals — could be anything like "*", the math variable (numbers)stays the same if you want to build inverted pyramids/triangles. 
+
+    let ch = i % 10; 
+    // wraps the digit back to 0 after 9 (so after 9 comes 0, 1, 2... again).
+
+    let row = " ".repeat(i) + Array(numbers).fill(ch).join(" ");
+    // " ".repeat(i) → indentation grows each row to shift things right. In this coding challenge its not required to add this code to the end of row because codewars does not recognize the extra spaces on the right. 
+    // Array(numbers) → creates an array with 'numbers' slots.
+    // .fill(ch) → fills every slot with the current digit (ch).
+    // .join(" ") → joins them into a string with spaces in between (visual effect).
+
+    triangle.push(row);
+  }
+
+  return triangle.join("\n"); 
+  // joins every row into one string, separated by new lines.
+}
+--------------------------------------------------
+
+Examples:
+--------------------------------------------------
+Input:
+  n = 5
+Output:
+  " 1 1 1 1 1\n  2 2 2 2\n   3 3 3\n    4 4\n     5"
+
+Rendered:
+  1 1 1 1 1
+   2 2 2 2
+    3 3 3
+     4 4
+      5
+--------------------------------------------------
+*/
