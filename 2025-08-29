@@ -27,7 +27,7 @@ function pattern(n){
     // " ".repeat(i) → indentation grows each row to shift things right. In this coding challenge its not required to add this code to the end of row because codewars does not recognize the extra spaces on the right. 
     // Array(numbers) → creates an array with 'numbers' slots.
     // .fill(ch) → fills every slot with the current digit (ch).
-    // .join(" ") → joins them into a string with spaces in between (visual effect).
+    // .join(" ") → joins them into a string with spa ces in between (visual effect).
 
     triangle.push(row);
   }
