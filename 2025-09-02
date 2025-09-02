@@ -1,0 +1,23 @@
+/*
+# Codewars Daily Challenge Log  
+
+**Challenge:** [Digital Root](https://www.codewars.com/kata/541c8630095125aba6000c00/solutions/javascript?filter=me&sort=best_practice&invalids=false)  
+**Date Completed:** September 2, 2025  
+**Difficulty:** 6 kyu  
+**Profile:** https://www.codewars.com/users/andysantiagopr  
+
+## Solution (JavaScript)
+```js
+function digitalRoot(n) {
+  let result = n;
+
+  while (result.toString().length > 1) { 
+    result = result
+      .toString()  // convert the number into a string so it can be split
+      .split('')   // break the string into an array of single characters
+      .map(Number) // convert each character back into a number
+      .reduce((acc, curr) => acc + curr, 0); // sum all digits into a single value
+  }
+
+  return result; // return the final single-digit result
+}
