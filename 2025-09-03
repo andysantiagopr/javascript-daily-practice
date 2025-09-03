@@ -1,0 +1,34 @@
+/*
+# Codewars Daily Challenge Log  
+
+- **Challenge:** [Digital Root](https://www.codewars.com/kata/541c8630095125aba6000c00/javascript)  
+- **Date Completed:** 03 September 2025  
+- **Difficulty:** 6 kyu  
+- **Profile:** [andysantiagopr](https://www.codewars.com/users/andysantiagopr)  
+
+## 📝 Code Solution
+```javascript
+
+//Second solution for digitalRoot algorithm: 
+
+function digitalRoot(n) {
+
+  let numbers = n.toString(); // Convert the number into a string so we can loop through each digit.
+  let sum = 0; // This will hold the running total of the digits.
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum += parseInt(numbers[i]); // Convert each character back to a number and add it to sum.
+  }
+
+  if (sum > 9) { // If the result has more than one digit, call digitalRoot again with the new sum.
+    return digitalRoot(sum);
+  }
+  
+  return sum; // Once sum is a single digit, return it.
+}
+
+// 📌 Examples
+console.log(digitalRoot(16));     // 7  (1 + 6)
+console.log(digitalRoot(942));    // 6  (9 + 4 + 2 = 15 → 1 + 5 = 6)
+console.log(digitalRoot(132189)); // 6  (1+3+2+1+8+9 = 24 → 2 + 4 = 6)
+console.log(digitalRoot(493193)); // 2  (4+9+3+1+9+3 = 29 → 2+9 = 11 → 1+1 = 2)
