@@ -1,0 +1,50 @@
+/*
+===============================
+ Codewars Daily Challenge Log
+===============================
+- Challenge: Capitals First — https://www.codewars.com/kata/55c353487fe3cc80660001d4
+- Date Completed: 15 September 2025
+- Difficulty: 7 kyu
+- Profile: https://www.codewars.com/users/andysantiagopr
+*/
+
+function capitalsFirst(str){
+  
+  let splitted = str.split(" "); //Enables the split of the string into an array of words.
+  let upperCase = [];
+  let lowerCase = [];
+  let regEx = /^[A-Za-z]$/; //Regular expression to check if the first character is a letter.
+
+  for (let i = 0; i < splitted.length; i++) {
+    
+    if (regEx.test(splitted[i][0])) { //Checks if the first character is a letter. And proceeds to check if it's upper or lower case.
+      
+      if (splitted[i][0] === splitted[i][0].toUpperCase()) { //Checks if the first character is upper case and pushes it to the upperCase array.
+        upperCase.push(splitted[i]);
+      }
+      else { //Checks if the first character is lower case and pushes it to the lowerCase array.
+        lowerCase.push(splitted[i]) }
+      }
+    
+    else { //If the first character is not a letter, it skips the word.
+      continue;
+    }
+    
+  } 
+  let result = `${upperCase.join(" ")} ${lowerCase.join(" ")}`; //Joins the two arrays into a single string with upper case words first.
+  return result.trim(); //Trims any extra spaces at the start or end of the string.
+}
+
+/*
+Examples:
+
+console.log(capitalsFirst("hello World test Case"));
+// Output: "World Case hello test"
+
+console.log(capitalsFirst("123 apple Banana orange"));
+// Output: "Banana apple orange"
+
+console.log(capitalsFirst("Zebra zebra Alpha beta 9dog Cat"));
+// Output: "Zebra Alpha Cat zebra beta"
+*/
+
