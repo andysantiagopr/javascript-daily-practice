@@ -1,0 +1,42 @@
+
+/* Solution to Capitals First — https://www.codewars.com/kata/55c353487fe3cc80660001d4 */
+
+function capitalsFirst(str){
+	let words = str.split(' ');
+  let upper = words.filter(function(x) { return x.charAt(0).match(/[A-Z]/) });
+  let lower = words.filter(function(x) { return x.charAt(0).match(/[a-z]/) });
+  return upper.concat(lower).join(' ');
+}
+
+/*Practice exercise
+
+Practice Exercise: Filtering Arrays
+
+You are given this array of objects representing users: */
+
+const users = [
+  { name: "Alice", age: 17, active: true },
+  { name: "Bob", age: 25, active: false },
+  { name: "Charlie", age: 32, active: true },
+  { name: "Diana", age: 15, active: false },
+  { name: "Eve", age: 40, active: true }
+];
+
+/* Tasks (using .filter()):
+
+Get all users who are 18 or older.
+➝ Expected: Bob, Charlie, Eve
+
+Get all users who are active.
+➝ Expected: Alice, Charlie, Eve
+
+Get all users who are active AND older than 30.
+➝ Expected: Charlie, Eve
+
+(Bonus) Get all users whose name starts with "A".
+➝ Expected: Alice
+
+Example Starter Code (Task 1) */
+
+let adults = users.filter(user => user.age >= 18);
+console.log(adults);
