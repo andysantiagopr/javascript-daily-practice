@@ -1,5 +1,5 @@
 
-/* Solution to Capitals First — https://www.codewars.com/kata/55c353487fe3cc80660001d4 */
+/* Alternative Solution to Capitals First — https://www.codewars.com/kata/55c353487fe3cc80660001d4 */
 
 function capitalsFirst(str){
 	let words = str.split(' ');
@@ -40,3 +40,57 @@ Example Starter Code (Task 1) */
 
 let adults = users.filter(user => user.age >= 18);
 console.log(adults);
+
+let active = users.filter(user => user.active === true);
+console.log(active);
+
+let olderThan30 = users.filter(user => active && user.age > 30);
+console.log(olderThan30);
+
+let initialA = users.filter(user => user.name[0] === "A");
+console.log(initialA);
+
+
+/* Write a function that takes a string of words and numbers separated by spaces.
+Rearrange the string so that all numbers come first, followed by all words.
+
+Example
+numbersFirst("apple 42 banana 7 orange 100 pear")
+
+
+👉 Should return:
+
+"42 7 100 apple banana orange pear"
+
+🔎 Hints (same pattern as your capitalsFirst)
+
+Use str.split(' ') to get an array of items.
+
+Use .filter() with a regex:
+
+One filter for numbers (/^[0-9]/)
+
+One filter for words (/^[a-zA-Z]/)
+
+Combine arrays with .concat() or spread ([...numbers, ...words]).
+
+Use .join(' ') to return the string. */ 
+
+function numbersFirst(str) {
+  let arr = str.split(' ');
+  let numberRegex = /^[0-9]+$/;
+  let lowerRegex = /[a-z]/;
+
+  let numbers = arr.filter(function(x) {
+    return numberRegex.test(x);
+  });
+
+  let lowerCase = arr.filter(function(x) {
+    return lowerRegex.test(x.charAt(0));
+  });
+
+  return numbers.concat(lowerCase).join(' ');
+
+}
+
+console.log(numbersFirst("apple 42 banana 7 orange 100 pear"));
