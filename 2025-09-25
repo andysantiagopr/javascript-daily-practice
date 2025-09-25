@@ -1,0 +1,60 @@
+/* Alternate Solution to Codewars challenge from 2025-09-23 */
+
+function sharedBits(a, b) {
+return (a & b).toString(2).replace(/0/g, '').length > 1
+}
+
+// (a & b) gives a number with 1s only in positions where both a and b have 1s. This is called a bitwise AND operation.
+// Converting that result to a binary string and removing all 0s leaves only the 1s using .replace(/0/g, '').
+// Counting the length of that string tells us how many positions had 1s in both original numbers.
+// If that count is greater than 1, we return true; otherwise, we return false.-
+
+
+/* Challenge: onlyOneSharedBit(a, b)
+
+👉 Write a function that returns true if a and b share exactly one common 1 bit in the same position, otherwise return false.
+
+Example 1
+onlyOneSharedBit(12, 5)
+
+12 → 1100
+
+5 → 0101
+
+1100 & 0101 = 0100 (just one common 1)
+✅ should return true */
+
+
+
+function onlyOneSharedBit(a, b) {
+    return (a & b).toString(2).replace(/0/g, '').length === 1;
+}
+
+console.log(onlyOneSharedBit(12, 5));
+
+
+/*
+Example 2
+onlyOneSharedBit(7, 3)
+
+7 → 111
+
+3 → 011
+
+111 & 011 = 011 (two shared 1s)
+❌ should return false */
+
+console.log(onlyOneSharedBit(7, 3));
+
+/*Example 3
+onlyOneSharedBit(8, 2)
+
+
+8 → 1000
+
+2 → 0010
+
+1000 & 0010 = 0000 (no shared 1s)
+❌ should return false */
+
+console.log(onlyOneSharedBit(8, 2));
