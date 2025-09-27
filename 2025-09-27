@@ -1,0 +1,31 @@
+/*
+Codewars Daily Challenge Log
+Date Completed: September 27, 2025
+User: https://www.codewars.com/users/andysantiagopr
+Challenge: Easy Time Convert
+Link: https://www.codewars.com/kata/5a084a098ba9146690000969
+Difficulty: 7 kyu
+
+Solution (JavaScript):
+```javascript */
+
+function timeConvert(num) {
+  const regex = /^-\d+(\.\d+)?$/; // Regular expression to check for negative numbers.
+  const hours = Math.floor(num / 60);
+  const minutes = num % 60;
+
+  if (num === 0 || regex.test(num) === true) { // Check for zero or negative input.
+    return "00:00";
+  } else {
+    return `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}`; // Format hours and minutes with leading zeros. 
+  }
+}
+
+//Examples//
+
+timeConvert(0); // "00:00"
+timeConvert(5); // "00:05"
+timeConvert(60); // "01:00"
+timeConvert(65); // "01:05"
