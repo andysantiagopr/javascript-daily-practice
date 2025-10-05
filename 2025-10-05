@@ -1,0 +1,31 @@
+//Code Challenge: Extending JavaScript Objects: Get First & Last Array Element
+
+//Link: https://www.codewars.com/kata/581351c40d8f13bc450008b8/solutions/javascript
+
+//Solution: 
+
+Array.prototype.first = function() { // Add the method to Array's prototype
+  return this[0]; // 'this' refers to the array on which the method is called
+};
+
+Array.prototype.last = function() {
+  return this[this.length - 1];
+};
+
+var a = [2, 5, 7, 3 ,4];
+
+a.first();  // 2
+a.last();   // 4
+
+/* Additional Practice: Add your own custom array method
+-Goal: Create a .double() method that returns a new array with all elements doubled*/
+
+Array.prototype.double = function() {
+    return this.map(x => x * 2);
+};
+
+let nums = [1, 2, 3];
+console.log(nums.double()); // [2, 4, 6]
+console.log(nums); // should still be [1, 2, 3]
+
+
